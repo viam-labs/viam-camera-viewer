@@ -1,0 +1,15 @@
+{
+    "module_id": "naomi:camera-viewer",
+    "visibility": "public",
+    "url": "https://github.com/viam-labs/viam-camera-viewer",
+    "description": "A simple camera viewer application showing the cameras of a machine.",
+    "models": [],
+    "entrypoint": "",
+    "applications": [
+      {
+        "name": "camera-viewer",
+        "type": "single_machine",
+        "entrypoint": "build/index.html"
+      }
+    ]
+}
