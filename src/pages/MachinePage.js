@@ -1,9 +1,8 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
 import CameraViewer from '../components/CameraViewer';
 
 function MachinePage() {
-  const { machineId } = useParams();
+  const machineId = window.location.pathname.split("/")[2];
 
   return (
     <div style={{ maxWidth: '800px', margin: '0 auto', padding: '20px' }}>
