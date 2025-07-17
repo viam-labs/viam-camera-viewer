@@ -6,16 +6,18 @@ import Cookies from "js-cookie";
 async function createClient() {
     try {
       // Get credentials from localStorage
-      const machineId = window.location.pathname.split("/")[2];
-      let apiKeyId;
-      let apiKeySecret;
-      let host;
+      let apiKeyId = "";
+      let apiKeySecret = "";
+      let host = "";
+      let machineId = "";
 
+      // Extract the machine identifier from the URL
+      const machineCookieKey = window.location.pathname.split("/")[2];
       ({
-        id: apiKeyId,
-        key: apiKeySecret,
+        apiKey: { id: apiKeyId, key: apiKeySecret },
+        machineId: machineId,
         hostname: host,
-      } = JSON.parse(Cookies.get(machineId)));
+      } = JSON.parse(Cookies.get(machineCookieKey)));
 
       if (!apiKeySecret || !apiKeyId) {
         throw new Error('API credentials not found');
